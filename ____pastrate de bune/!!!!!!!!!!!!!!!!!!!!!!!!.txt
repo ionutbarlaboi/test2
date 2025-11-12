@@ -1,9 +1,0 @@
-Rulare:
-cd Desktop\aplicatie
-npm run dev
-
-
-
-
-Genereaza test si pagina de test noua:
-node generate-test.js test3
