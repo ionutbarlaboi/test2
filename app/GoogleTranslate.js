@@ -17,7 +17,9 @@ export default function GoogleTranslate() {
       new window.google.translate.TranslateElement(
         {
           pageLanguage: "ro",
-          layout: google.translate.TranslateElement.InlineLayout.SIMPLE, // bara dropdown, compact
+          
+          layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+
         },
         "google_translate_element"
       );
