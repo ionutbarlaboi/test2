@@ -17,12 +17,12 @@ export default function HomePage() {
     localStorage.setItem("lang", newLang);
   };
 
-  // 🔧 Setări ușor de ajustat
-  const cartoonWidth = 400;      // lățimea imaginii Math-Cartoon
-  const cartoonHeight = 200;     // înălțimea imaginii
-  const buttonsGap = 20;         // distanța între butoane
-  const topBarMargin = 20;       // distanța barei cu butoane de imagine (poți modifica)
-  const startButtonOffset = 40;  // distanța butonului "Hai să începem" față de imagine
+  // 🔧 Setări ajustabile
+  const cartoonWidth = 400;
+  const cartoonHeight = 200;
+  const startButtonOffset = 80; // distanță sub imagine
+  const topButtonsOffset = 100; // distanță de sus (poți modifica)
+  const buttonsGap = 20;
 
   const text = {
     ro: { start: "Hai să începem" },
@@ -32,7 +32,7 @@ export default function HomePage() {
   return (
     <main
       style={{
-        minHeight: "100vh",
+        height: "100dvh", // ✅ folosește dynamic viewport height (corect pe mobil)
         width: "100vw",
         display: "flex",
         flexDirection: "column",
@@ -40,78 +40,76 @@ export default function HomePage() {
         justifyContent: "center",
         backgroundColor: "white",
         textAlign: "center",
-        overflow: "hidden",
+        overflow: "hidden", // ✅ taie orice depășire
         position: "relative",
       }}
     >
-      {/* Container pentru imagine + bara + buton */}
+      {/* Conținut centrat */}
       <div
         style={{
+          position: "relative",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          justifyContent: "center",
         }}
       >
-        {/* Bara de sus: Translator + 3 butoane */}
+        {/* Bara de sus (aliniată la lățimea pozei) */}
         <div
           style={{
+            position: "absolute",
+            top: `-${topButtonsOffset}px`,
+            right: "5%", // ✅ nu mai e lipit de marginea ecranului
             display: "flex",
-            justifyContent: "space-between",
             alignItems: "center",
-            width: `${cartoonWidth}px`,  // aliniere cu imaginea
-            maxWidth: "90vw",
-            marginBottom: `${topBarMargin}px`,
+            justifyContent: "flex-end",
             gap: `${buttonsGap}px`,
+            width: `${cartoonWidth}px`, // se aliniază cu imaginea
+            maxWidth: "90vw",
           }}
         >
-          {/* Translator */}
-          <div id="google_translate_element" style={{ flexShrink: 0 }} />
-
-          {/* Cele 3 butoane */}
-          <div style={{ display: "flex", gap: `${buttonsGap}px` }}>
-            {/* Facebook */}
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="#0070f3"
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-              >
-                <path d="M22.675 0h-21.35C.6 0 0 .6 0 1.337v21.326C0 23.4.6 24 1.325 24H12.82v-9.294H9.692v-3.622h3.127V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.794.142v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.59l-.467 3.622h-3.123V24h6.116c.725 0 1.325-.6 1.325-1.337V1.337C24 .6 23.4 0 22.675 0z" />
-              </svg>
-            </a>
-
-            {/* Gmail */}
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="#DB4437"
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-              >
-                <path d="M12 12.713l11.985-8.713H0L12 12.713zm0 2.574l-12-8.713V21h24V6.574l-12 8.713z" />
-              </svg>
-            </a>
-
-            {/* EN/RO */}
-            <button
-              onClick={toggleLang}
-              style={{
-                padding: "4px 8px",
-                borderRadius: 6,
-                border: "1px solid #0070f3",
-                backgroundColor: "white",
-                cursor: "pointer",
-              }}
+          {/* Facebook */}
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#0070f3"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
             >
-              {lang === "ro" ? "EN" : "RO"}
-            </button>
-          </div>
+              <path d="M22.675 0h-21.35C.6 0 0 .6 0 1.337v21.326C0 23.4.6 24 1.325 24H12.82v-9.294H9.692v-3.622h3.127V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.794.142v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.59l-.467 3.622h-3.123V24h6.116c.725 0 1.325-.6 1.325-1.337V1.337C24 .6 23.4 0 22.675 0z" />
+            </svg>
+          </a>
+
+          {/* Gmail */}
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#DB4437"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+            >
+              <path d="M12 12.713l11.985-8.713H0L12 12.713zm0 2.574l-12-8.713V21h24V6.574l-12 8.713z" />
+            </svg>
+          </a>
+
+          {/* EN/RO */}
+          <button
+            onClick={toggleLang}
+            style={{
+              padding: "4px 8px",
+              borderRadius: 6,
+              border: "1px solid #0070f3",
+              backgroundColor: "white",
+              cursor: "pointer",
+            }}
+          >
+            {lang === "ro" ? "EN" : "RO"}
+          </button>
         </div>
 
-        {/* Imaginea Math-Cartoon */}
+        {/* Imaginea */}
         <Image
           src="/math-cartoon.jpg"
           alt="Caricatură matematică"

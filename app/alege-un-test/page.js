@@ -34,11 +34,9 @@ export default function SelectTestPage() {
       style={{
         minHeight: "100vh",
         overflowY: "auto",
-        backgroundImage: "url('/background_gol.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        paddingTop: "2rem",
+        backgroundColor: "white",
+        backgroundSize: "cover",        
+        paddingTop: "0rem",
         boxSizing: "border-box",
       }}
     >
@@ -55,8 +53,9 @@ export default function SelectTestPage() {
             fontSize: "24px",
             fontWeight: "bold",
             marginBottom: "2rem",
-            color: "#fff",
-            textShadow: "0 0 6px rgba(0,0,0,0.7)",
+            marginTop: 0,
+            color: "#0060c0",
+            textDecoration: "underline",
           }}
         >
           Alege un test
