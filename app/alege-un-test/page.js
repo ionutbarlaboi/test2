@@ -37,6 +37,7 @@ export default function SelectTestPage() {
         backgroundColor: "white",
         backgroundSize: "cover",        
         paddingTop: "0rem",
+         marginTop: "0rem",
         boxSizing: "border-box",
       }}
     >
