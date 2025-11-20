@@ -159,10 +159,10 @@
     {
       "text": "În figura de mai jos este reprezentat o prismă dreaptă ABCA'B'C' cu baza triunghi echilateral, cu AB=AA’=4 cm. Aria totala a prismei este egală cu:",
       "options": [
-        "$12$ $\\text{cm}^2$",
+        "$8\\sqrt3$ $\\text{cm}^2$",
         "$4\\sqrt3$ $\\text{cm}^2$",
-        "$48$ $\\text{cm}^2$",
-        "$48+4\\sqrt3$ $\\text{cm}^2$"
+        "$4(10+\\sqrt3)$ $\\text{cm}^2$",
+        "$4(12+\\sqrt3)$ $\\text{cm}^2$"
       ],
       "correct": 3,
       "explanation": "$A_t = A_l + 2A_b$\n$A_l = P_b \\cdot h$\n$A_l = 12 \\cdot 4 = 48$ $\\text{cm}^2$\n\n$A_b = \\frac{l^2 \\sqrt{3}}{4}$\n$A_b = \\frac{16\\sqrt{3}}{4} = 4\\sqrt{3}$ $\\text{cm}^2$\n\n$A_t = 48 + 4\\sqrt{3}$\n$A_t = 4(12 + \\sqrt{3})$  $\\text{cm}^2$\n",
