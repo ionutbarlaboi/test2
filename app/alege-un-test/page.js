@@ -32,7 +32,7 @@ export default function SelectTestPage() {
   return (
     <div
       style={{
-        minHeight: "100vh",
+        minHeight: "auto",
         overflowY: "auto",
         backgroundColor: "white",
         backgroundSize: "cover",        
@@ -124,7 +124,7 @@ export default function SelectTestPage() {
           </div>
         )}
 
-        <div style={{ marginTop: "4rem" }}>
+        <div style={{ marginTop: "2rem" }}>
           <button
             onClick={() => router.push("/")}
             style={{
