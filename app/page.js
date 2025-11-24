@@ -14,16 +14,16 @@ const [showEmailBox, setShowEmailBox] = useState(false);
 
 // Generăm poziții mai echilibrate
 const randomStyle = () => ({
-position: "absolute",
-top: `${5 + Math.random() * 90}%`,
-left: `${5 + Math.random() * 90}%`,
-transform: `rotate(${Math.random() * 30 - 15}deg)`,
-fontSize: `${10 + Math.random() * 6}px`,
-fontWeight: "100",
-color: "rgba(0,0,0,0.05)",
-pointerEvents: "none",
-userSelect: "none",
-whiteSpace: "nowrap",
+  position: "absolute",
+  top: 5 + Math.random() * 90 + "%",
+  left: 5 + Math.random() * 90 + "%",
+  transform: "rotate(" + (Math.random() * 30 - 15) + "deg)",
+  fontSize: 10 + Math.random() * 6 + "px",
+  fontWeight: "100",
+  color: "rgba(0,0,0,0.05)",
+  pointerEvents: "none",
+  userSelect: "none",
+  whiteSpace: "nowrap",
 });
 
 return (
@@ -41,6 +41,7 @@ display: "flex",
 alignItems: "center",
 justifyContent: "center",
 zIndex: 999,
+animation: "fadeIn 0.3s",
 }}
 onClick={() => setShowEmailBox(false)}
 >
@@ -50,13 +51,20 @@ style={{
 padding: "20px",
 borderRadius: 12,
 maxWidth: "90vw",
+width: "320px",
+backgroundColor: "white",
 textAlign: "center",
+boxShadow: "0 0 10px rgba(0,0,0,0.3)",
+animation: "fadeIn 0.3s",
 }}
 >
 <p style={{ fontSize: "1.1rem", marginBottom: "10px" }}>
-Vrei să ne spui ceva? </p>
+Vrei să ne spui ceva?
+</p>
 <p style={{ fontWeight: "bold", marginBottom: "20px" }}>
-Scrie-ne la: [xxxx@gmail.ro](mailto:xxxx@gmail.ro) </p>
+Scrie-ne la: xxxx@gmail.ro
+
+</p>
 <button
 onClick={() => setShowEmailBox(false)}
 style={{
@@ -68,9 +76,11 @@ border: "none",
 cursor: "pointer",
 }}
 >
-Închide </button> </div> </div>
+Închide
+</button>
+</div>
+</div>
 )}
-
 
   <main
     style={{
@@ -89,7 +99,16 @@ cursor: "pointer",
     }}
   >
     {/* Fundal echilibrat */}
-    <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 0 }}>
+    <div
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        zIndex: 0,
+      }}
+    >
       {Array.from({ length: 250 }).map((_, i) => (
         <span key={i} style={randomStyle()}>
           Matemat'IBa
@@ -148,7 +167,7 @@ cursor: "pointer",
         </button>
 
         <a
-          href="#"
+          href="https://www.facebook.com/ionut.barlaboi"
           target="_blank"
           rel="noopener noreferrer"
           style={{
@@ -212,6 +231,7 @@ cursor: "pointer",
     }
   `}</style>
 </>
+
 
 );
 }
