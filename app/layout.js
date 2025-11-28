@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
     <html lang="ro" className={inter.variable}>
       <head>
         {/* Manifest PWA */}
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="manifest" href="/manifest.json?v=2" />
 
         {/* Favicon & Apple Touch Icon */}
         <link rel="icon" href="/favicon.ico?v=2" />
