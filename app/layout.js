@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#003366" />
       </head>
+
       <body>
         {/* Splash alb rapid la încărcare */}
         <div
@@ -74,6 +75,21 @@ export default function RootLayout({ children }) {
                   setTimeout(() => preload.remove(), 350);
                 }
               });
+            `,
+          }}
+        />
+
+        {/* Service Worker pentru PWA */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ("serviceWorker" in navigator) {
+                window.addEventListener("load", () => {
+                  navigator.serviceWorker.register("/service-worker.js")
+                    .then(() => console.log("Service Worker register OK"))
+                    .catch(err => console.error("Service Worker register FAIL:", err));
+                });
+              }
             `,
           }}
         />
