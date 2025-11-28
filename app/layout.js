@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import GoogleTranslate from "./GoogleTranslate";
+import SplashScreen from "./SplashScreen"; // Client Component
 
 const inter = Inter({
   variable: "--font-inter",
@@ -44,8 +45,8 @@ export default function RootLayout({ children }) {
           </div>
         </header>
 
-        {/* Conținutul principal */}
-        {children}
+        {/* SplashScreen peste tot */}
+        <SplashScreen>{children}</SplashScreen>
       </body>
     </html>
   );
