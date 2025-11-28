@@ -1,7 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import GoogleTranslate from "./GoogleTranslate";
-import SplashScreen from "./SplashScreen"; // Client Component
 
 const inter = Inter({
   variable: "--font-inter",
@@ -16,6 +15,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ro" className={inter.variable}>
+      <head>
+        {/* Manifest PWA */}
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#003366" />
+      </head>
       <body>
         <header
           style={{
@@ -40,8 +44,8 @@ export default function RootLayout({ children }) {
           </div>
         </header>
 
-        {/* Aplica SplashScreen peste tot */}
-        <SplashScreen>{children}</SplashScreen>
+        {/* Conținutul principal */}
+        {children}
       </body>
     </html>
   );
