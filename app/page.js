@@ -41,7 +41,7 @@ export default function HomePage() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            zIndex: 999,
+            zIndex: 1001,
             animation: "fadeIn 0.3s",
           }}
           onClick={() => setShowEmailBox(false)}
@@ -82,7 +82,7 @@ export default function HomePage() {
         </div>
       )}
 
-      {/* Modal In Development simplificat */}
+      {/* Modal In Development */}
       {showDevModal && (
         <div
           style={{
@@ -112,15 +112,18 @@ export default function HomePage() {
               boxShadow: "0 0 15px rgba(0,0,0,0.3)",
             }}
           >
-            <img
+            <Image
               src="/in-dev.jpg"
               alt="In Development"
+              width={300}
+              height={200}
               style={{
                 width: "100%",
                 height: "auto",
                 borderRadius: 10,
                 marginBottom: 10,
               }}
+              priority
             />
             <button
               onClick={() => setShowDevModal(false)}
@@ -140,7 +143,7 @@ export default function HomePage() {
         </div>
       )}
 
-      {/* Restul paginii */}
+      {/* Pagina principală */}
       <main
         style={{
           height: "85vh",
@@ -157,6 +160,7 @@ export default function HomePage() {
           animation: "fadeIn 1s forwards",
         }}
       >
+        {/* Fundal Matemat’IBa */}
         <div
           style={{
             position: "absolute",
@@ -174,6 +178,7 @@ export default function HomePage() {
           ))}
         </div>
 
+        {/* Conținut */}
         <div
           style={{
             position: "relative",
@@ -282,9 +287,8 @@ export default function HomePage() {
 
       <style jsx>{`
         @keyframes fadeIn {
-          to {
-            opacity: 1;
-          }
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
       `}</style>
     </>

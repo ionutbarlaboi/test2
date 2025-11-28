@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import GoogleTranslate from "./GoogleTranslate"; // componenta ta
+import GoogleTranslate from "./GoogleTranslate";
+import SplashScreen from "./SplashScreen"; // Client Component
 
 const inter = Inter({
   variable: "--font-inter",
@@ -16,7 +17,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ro" className={inter.variable}>
       <body>
-        {/* Header cu Google Translate sus, centrat și mărit */}
         <header
           style={{
             width: "100%",
@@ -27,21 +27,21 @@ export default function RootLayout({ children }) {
         >
           <div
             style={{
-              width: "60%",         // lățimea div-ului
-              maxWidth: "500px",    // limită pe desktop
+              width: "60%",
+              maxWidth: "500px",
               margin: "0 auto",
               display: "flex",
               justifyContent: "center",
-              transform: "scale(1.2)",     // mărire cu 20%
-              transformOrigin: "top center", // să rămână centrat
+              transform: "scale(1.2)",
+              transformOrigin: "top center",
             }}
           >
             <GoogleTranslate />
           </div>
         </header>
 
-        {/* Conținutul principal */}
-        <main>{children}</main>
+        {/* Aplica SplashScreen peste tot */}
+        <SplashScreen>{children}</SplashScreen>
       </body>
     </html>
   );
